@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato WhatsApp</title>
+  <script>
+    // Lista de números (formato: código do país + DDD + número, sem espaços ou símbolos)
+    const numeros = [
+      '555491277851', // Número 1
+      '554399559327', // Número 2
+      '555183177818'  // Número 3
+    ];
+
+    // Mensagem padrão (espaços viram %20 automaticamente)
+    const mensagem = 'Olá, quero mais informações sobre o curso';
+
+    // Função para escolher aleatoriamente
+    function redirecionarWhatsApp() {
+      const escolhido = numeros[Math.floor(Math.random() * numeros.length)];
+      const link = `https://wa.me/${escolhido}?text=${encodeURIComponent(mensagem)}`;
+      window.location.href = link;
+    }
+
+    // Executa assim que a página carrega
+    window.onload = redirecionarWhatsApp;
+  </script>
+</head>
+<body>
+  <p>Redirecionando para o WhatsApp...</p>
+</body>
+</html>
