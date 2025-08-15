@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato WhatsApp</title>
+  <script>
+    // Lista de números
+    const numeros = [
+      '5517981041134', // Número 1
+      '5551983488052', // Número 2
+      '5551994129559', // Número 3
+      '5551999031878'  // Número 4
+    ];
+
+    // Mensagem padrão
+    const mensagem = 'Olá, gostaria de realizar minha inscrição no curso Deep Face';
+
+    // Função para escolher aleatoriamente e redirecionar
+    function redirecionarWhatsApp() {
+      const escolhido = numeros[Math.floor(Math.random() * numeros.length)];
+      const link = `https://wa.me/${escolhido}?text=${encodeURIComponent(mensagem)}`;
+      window.location.href = link;
+    }
+
+    // Executa assim que a página carrega
+    window.onload = redirecionarWhatsApp;
+  </script>
+</head>
+<body>
+  <p>Redirecionando para o WhatsApp...</p>
+  <noscript>
+    Para abrir o WhatsApp, ative o JavaScript e recarregue a página.
+  </noscript>
+</body>
+</html>
